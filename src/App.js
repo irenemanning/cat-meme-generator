@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
+import Home from './Home'
+import Navbar from './Navbar';
+import CreateCatMeme from './CreateCatMeme';
+import CatMemes from "./CatMemes";
 
 function App() {
+  const [memes, setMemes] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/memes")
+      .then((r) => r.json())
+      .then((catMemeData) => {
+        setMemes(catMemeData);
+      });
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Switch>
+        <Route exact path="/catmemes">
+          <CatMemes memes={memes} setMemes={setMemes}/>
+        </Route>
+        <Route exact path="/createcatmeme">
+          <CreateCatMeme setMemes={setMemes} memes={memes} />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }
