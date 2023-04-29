@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/cat-meme-generator/static/css/main.1c5fe828.css",
+    "main.js": "/cat-meme-generator/static/js/main.1c395d79.js",
+    "static/media/noeyescat.jpg": "/cat-meme-generator/static/media/noeyescat.46736611f5821158abaf.jpg",
+    "index.html": "/cat-meme-generator/index.html",
+    "main.1c5fe828.css.map": "/cat-meme-generator/static/css/main.1c5fe828.css.map",
+    "main.1c395d79.js.map": "/cat-meme-generator/static/js/main.1c395d79.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c5fe828.css",
+    "static/js/main.1c395d79.js"
+  ]
+}
