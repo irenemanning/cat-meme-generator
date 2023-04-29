@@ -3,11 +3,16 @@ import "./index.css"
 import EditForm from "./EditForm";
 import { useState } from "react";
 
-function CatMeme({ meme, updateMemes, onDeleteMeme }){
+function CatMeme({ increment, setIncrement, meme, updateMemes, onDeleteMeme }){
+    const [count, setCount] = useState(0)
     let { id, caption1, caption2, image } = meme
     const [showForm, setShowForm]= useState(false)
     function toggleForm() {
         setShowForm(!showForm)
+    }
+    function handleClick(){
+        setCount(count+increment)
+        console.log(increment)
     }
     
     function handleDelete() {
@@ -27,6 +32,7 @@ function CatMeme({ meme, updateMemes, onDeleteMeme }){
             </div>
             <button onClick={ toggleForm } className="edit-button">{showForm ? 'Done':"Edit"}</button>
             <button onClick={handleDelete} className="delete-button">Delete</button>
+            <button onClick={handleClick}>clicks: {count}</button>
         </div>
         
     )

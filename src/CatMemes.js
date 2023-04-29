@@ -3,8 +3,11 @@ import { useState } from "react";
 import CatMeme from "./CatMeme";
 import "./index.css";
 
-function CatMemes({ memes, setMemes }) {
-  
+function CatMemes({ increment, setIncrement, memes, setMemes}) {
+
+  function handleIncrementChange(e){
+      setIncrement(parseInt(e.target.value))
+  }
 
   function updateMemes(catMeme) {
     const copyMemes = [...memes];
@@ -18,10 +21,21 @@ function CatMemes({ memes, setMemes }) {
       setMemes(updateMemes)
   }
   const catMemes = memes.map((meme) => (
-    <CatMeme meme={meme} key={meme.id} updateMemes={updateMemes} onDeleteMeme={onDeleteMeme} />
+    <CatMeme increment={increment} setIncrement={setIncrement} meme={meme} key={meme.id} updateMemes={updateMemes} onDeleteMeme={onDeleteMeme} />
   ));
-
-  return <div className="memes-page">{catMemes}</div>;
+  return (
+      <div>
+          <label>Count increment</label>
+        <input 
+          style={{border: "2px solid black", marginTop: "150px"}} 
+          type="text"
+          placeholder="increment"A
+          onChange={handleIncrementChange}
+          />
+    
+          <div className="memes-page">{catMemes}</div>
+      </div>
+    )
 }
 
 export default CatMemes;

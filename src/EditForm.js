@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./index.css"
 
-function EditForm({ id, meme, toggleForm, updateMemes}) {
+function EditForm({ id, meme, updateMemes}) {
     const [caption1, setCaption1]=useState(meme.caption1)
     const [caption2, setCaption2]=useState(meme.caption2)
     function handleSubmit(e){
@@ -21,9 +21,6 @@ function EditForm({ id, meme, toggleForm, updateMemes}) {
 
     }
     
-        
-    
-
     return (
         <div className="edit-form-container">
             <form onSubmit={handleSubmit} className="edit-form">

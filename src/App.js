@@ -7,6 +7,8 @@ import CatMemes from "./CatMemes";
 
 function App() {
   const [memes, setMemes] = useState([]);
+  
+  const [increment, setIncrement]= useState(1)
 
   useEffect(() => {
     fetch("http://localhost:4000/memes")
@@ -20,7 +22,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/catmemes">
-          <CatMemes memes={memes} setMemes={setMemes}/>
+          <CatMemes increment={increment} setIncrement={setIncrement} memes={memes} setMemes={setMemes}/>
         </Route>
         <Route exact path="/createcatmeme">
           <CreateCatMeme setMemes={setMemes} memes={memes} />
