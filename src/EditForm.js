@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./index.css"
 
 function EditForm({ id, meme, updateMemes}) {
@@ -6,7 +6,7 @@ function EditForm({ id, meme, updateMemes}) {
     const [caption2, setCaption2]=useState(meme.caption2)
     function handleSubmit(e){
         e.preventDefault()
-        fetch("http://localhost:4000/memes/" + id, {
+        fetch("http://localhost:3000/memes/" + id, {
             method: "PATCH",
             headers: {
                 'Accept' : "application/json",

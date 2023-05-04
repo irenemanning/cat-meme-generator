@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import "./index.css"
 
 function CreateCatMeme({ setMemes, memes }) {
@@ -8,7 +8,7 @@ function CreateCatMeme({ setMemes, memes }) {
         caption2: "",
         image: ""
     });
-    const history = useHistory()
+    // const history = useHistory()
     function handleChange(e) {
         setFormData({
             ...formData,
@@ -18,7 +18,7 @@ function CreateCatMeme({ setMemes, memes }) {
     function handleSubmit(e){
         e.preventDefault()
         console.log(formData);
-        fetch('http://localhost:4000/memes', {
+        fetch('http://localhost:3000/memes', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -29,10 +29,10 @@ function CreateCatMeme({ setMemes, memes }) {
                 "caption2": formData.caption2
             })
         })
-        .then((r) => r.json())
+        .then(r => r.json())
         .then((newCatMeme) => {
             setMemes([...memes, newCatMeme,])
-            history.push("/catmemes")
+            // history.push("/catmemes")
         })
     }
     return (

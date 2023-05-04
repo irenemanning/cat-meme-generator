@@ -16,7 +16,7 @@ function CatMeme({ increment, setIncrement, meme, updateMemes, onDeleteMeme }){
     }
     
     function handleDelete() {
-        fetch("http://localhost:4000/memes/" + id, {
+        fetch("http://localhost:3000/memes/" + id, {
             method: "DELETE",
         })
         .then((r)=>r.json())
@@ -34,7 +34,6 @@ function CatMeme({ increment, setIncrement, meme, updateMemes, onDeleteMeme }){
             <button onClick={handleDelete} className="delete-button">Delete</button>
             <button onClick={handleClick}>clicks: {count}</button>
         </div>
-        
     )
 }
 
