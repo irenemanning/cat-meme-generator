@@ -11,12 +11,20 @@ function App() {
   const [increment, setIncrement]= useState(1)
 
   useEffect(() => {
-    fetch("http://localhost:3000/memes")
+  //   fetch("http://localhost:3000/memes")
+  //     .then(r => r.json())
+  //     .then(catMemeData => {
+  //       setMemes(catMemeData);
+  //     });
+  // }, []);
+  fetch("http://localhost:9999/.netlify/functions/catmemes")
       .then(r => r.json())
       .then(catMemeData => {
         setMemes(catMemeData);
+        console.log(memes)
       });
   }, []);
+  
   return (
     <div className="App">
       <Navbar />
