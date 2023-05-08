@@ -23,7 +23,7 @@ function App() {
         setMemes(catMemeData);
         console.log(memes)
       });
-  }, []);
+  }, [memes]);
   
   return (
     <div className="App">
