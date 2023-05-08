@@ -21,9 +21,9 @@ function App() {
       .then(r => r.json())
       .then(catMemeData => {
         setMemes(catMemeData);
-        console.log(memes)
       });
-  }, [memes]);
+  }, []);
+  console.log(memes)
   
   return (
     <div className="App">
