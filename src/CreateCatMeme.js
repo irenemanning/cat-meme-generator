@@ -18,7 +18,8 @@ function CreateCatMeme({ setMemes, memes }) {
     function handleSubmit(e){
         e.preventDefault()
         console.log(formData);
-        fetch('http://localhost:3000/memes', {
+        // use this link for hosting on your own device http://localhost:3000/memes
+        fetch('https://cat-memes-by-irene.netlify.app/.netlify/functions/catmemes', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
