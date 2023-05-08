@@ -11,6 +11,7 @@ function App() {
   const [increment, setIncrement]= useState(1)
 
   useEffect(() => {
+    // THIS IS FOR HOSTING JSON SERVER 
   //   fetch("http://localhost:3000/memes")
   //     .then(r => r.json())
   //     .then(catMemeData => {
