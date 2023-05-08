@@ -18,7 +18,7 @@ function App() {
   //       setMemes(catMemeData);
   //     });
   // }, []);
-  fetch("http://localhost:9999/.netlify/functions/catmemes")
+  fetch("https://cat-memes-by-irene.netlify.app/.netlify/functions/catmemes")
       .then(r => r.json())
       .then(catMemeData => {
         setMemes(catMemeData);
